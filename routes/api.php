@@ -18,12 +18,22 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
 
-], function ($router) {
+], function () {
 
     Route::post('register', 'JWTAuthController@register');
+    // Route::get('login', 'JWTAuthController@login')->name('login');
     Route::post('login', 'JWTAuthController@login');
     Route::post('logout', 'JWTAuthController@logout');
     Route::post('refresh', 'JWTAuthController@refresh');
+    
+    Route::get('/salaries','SalaryController@index');
+
+  
+  
     // Route::get('profile', 'JWTAuthController@profile');
 
 });
+
+
+
+
